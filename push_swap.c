@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/04 20:17:47 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/05 19:40:51 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,22 @@ int	main(int ac, char **av)
 		ft_link(swap.str, &swap);
 		// ft_push_b(&swap);
 		// ft_push_a(&swap);
-		ft_sort_three(&swap);
-		while (swap.stack_a)
-		{
-			printf("---%d\n", swap.stack_a->data);
-			swap.stack_a = swap.stack_a->next;
-		}
-		while (swap.stack_b)
-		{
-			printf(">>>%d\n", swap.stack_b->data);
-			swap.stack_b = swap.stack_b->next;
-		}
+		if (ac == 4)
+			ft_sort_three(&swap);
+		if (ac == 5)
+			ft_sort_four(&swap);
+		if (ac == 6)
+			ft_sort_five(&swap);
+		// while (swap.stack_a)
+		// {
+		// 	printf("---%d\n", swap.stack_a->data);
+		// 	swap.stack_a = swap.stack_a->next;
+		// }
+		// while (swap.stack_b)
+		// {
+		// 	printf(">>>%d\n", swap.stack_b->data);
+		// 	swap.stack_b = swap.stack_b->next;
+		// }
 	}
 	else
 		exit(0);

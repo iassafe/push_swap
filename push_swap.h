@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/04 17:01:28 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/05 15:16:18 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct s_swap
 
 }			t_s;
 
+void	ft_sort_ten(t_s *swap);
+void	ft_sort_five(t_s *swap);
+void	ft_sort_four(t_s *swap);
 void	ft_sort_three(t_s *swap);
 void	ft_push_a(t_s *swap);
 void	ft_push_b(t_s *swap);
