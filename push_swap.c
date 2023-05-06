@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/05 19:40:51 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/06 18:06:32 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,43 +39,118 @@ void	ft_link(char **str, t_s *swap)
 	}
 }
 
+void	ft_table(t_s *swap, t_data *dt)
+{
+	t_node	*node;
+	int		i;
+
+	dt->tab = malloc((dt->count) * sizeof(int));
+	node = swap->stack_a;
+	i = 0;
+	while (node)
+	{
+		dt->tab[i++] = node->data;
+		node = node->next;
+	}
+	// i = 0;
+	// while (i < 100)
+	// {
+	// 	printf("%d ", dt->tab[i++]);
+	// }
+}
+
+void	ft_sort_table(t_data *dt)
+{
+	int i;
+	int j;
+	int tmp;
+
+	i = 0;
+	while (dt->tab[i])
+	{
+		j = i + 1;
+		tmp = 0;
+		while (dt->tab[j])
+		{
+			if ( dt->tab[i] > dt->tab[j])
+			{
+				tmp = dt->tab[i];
+				dt->tab[i] = dt->tab[j];
+				dt->tab[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	// i = 0;
+	// while (i < 100)
+	// {
+	// 	printf("%d ", dt->tab[i++]);
+	// }
+}
+
+void	ft_index_stack(t_s *swap, t_data *dt)
+{
+	int i;
+	t_node *node;
+	
+	node = swap->stack_a;
+	i = 0;
+	while(i < 100)
+	{
+		while(node)
+		{
+			if (node->data == dt->tab[i])
+			{
+				node->index = i;
+				node = swap->stack_a;
+				break;
+			}
+			node = node->next;
+		}
+		i++;
+	}
+}
+
+
 int	main(int ac, char **av)
 {
 	t_s swap;
-	// t_node *point;
 	int i;
 	char *s;
-	int k;
+	t_data dt;
 
-	k = 0;
 	i = 1;
 	if (ac > 1)
 	{
-		ft_check(&av[i]);
 		while (av[i])
 		{
+			ft_check(&av[i]);
 			s = ft_strjoin(s, av[i], ' ');
 			i++;
 		}
 		swap.str = ft_split(s, ' ');
-		if (swap.str[k] == NULL)
-			ft_error("lllll\n");
+		dt.count = 0;
+		while (swap.str[dt.count])
+			dt.count++;
 		ft_number(swap.str);
 		ft_duplicat(swap.str);
 		ft_link(swap.str, &swap);
-		// ft_push_b(&swap);
-		// ft_push_a(&swap);
-		if (ac == 4)
+		if (dt.count == 3)
 			ft_sort_three(&swap);
-		if (ac == 5)
+		if (dt.count == 4)
 			ft_sort_four(&swap);
-		if (ac == 6)
+		if (dt.count == 5)
 			ft_sort_five(&swap);
-		// while (swap.stack_a)
-		// {
-		// 	printf("---%d\n", swap.stack_a->data);
-		// 	swap.stack_a = swap.stack_a->next;
-		// }
+		if (dt.count == 100)
+			ft_table(&swap, &dt);
+		ft_sort_table(&dt);
+		ft_index_stack(&swap, &dt);
+		while (swap.stack_a)
+		{
+			printf("%d ", swap.stack_a->index);
+			swap.stack_a = swap.stack_a->next;
+		}
 		// while (swap.stack_b)
 		// {
 		// 	printf(">>>%d\n", swap.stack_b->data);

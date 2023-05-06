@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/05 15:16:18 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/06 17:39:01 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_node
 {
 	int				data;
 	struct s_node	*next;
+	int index;
 
 }t_node;
 
@@ -31,6 +32,13 @@ typedef struct s_swap
 	t_node	*stack_b;
 
 }			t_s;
+typedef struct s_data
+{
+	int count;
+	int	*tab;
+	
+
+}			t_data;
 
 void	ft_sort_ten(t_s *swap);
 void	ft_sort_five(t_s *swap);

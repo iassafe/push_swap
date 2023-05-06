@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/03 10:22:13 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/06 14:13:49 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ void	ft_check(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][j] == 32 || (str[i][j] >= 9 && str[i][j] <= 13))
-			{
-				if ((str[i][j - 1] == '\0' || str[i][j - 1] == ' ')
-				&& str[i][j + 1] == '\0')
-					ft_error("Error space\n");
-			}
 			if (str[i][j] == '+' || str[i][j] == '-')
 			{
 				if ((!(str[i][j + 1] >= '0' && str[i][j + 1] <= '9')) ||
