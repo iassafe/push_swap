@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:17:46 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/06 16:08:03 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/07 10:28:46 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_rotate(t_s *swap)
 	swap->stack_a = swap->stack_a->next;
 	node->next->next = NULL;
 }
+
 void	ft_ra(t_s *swap)
 {
 	ft_rotate(swap);

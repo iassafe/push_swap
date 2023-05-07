@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/06 17:39:01 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/07 10:19:34 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ typedef struct s_swap
 }			t_s;
 typedef struct s_data
 {
-	int count;
+	int	count;
 	int	*tab;
-	
 
 }			t_data;
 
@@ -44,12 +43,17 @@ void	ft_sort_ten(t_s *swap);
 void	ft_sort_five(t_s *swap);
 void	ft_sort_four(t_s *swap);
 void	ft_sort_three(t_s *swap);
+void	ft_sort_two(t_s	*swap);
 void	ft_push_a(t_s *swap);
 void	ft_push_b(t_s *swap);
 void	ft_rra(t_s *swap);
 void	ft_ra(t_s *swap);
 void	ft_sa(t_s *swap);
 void	ft_sb(t_s *swap);
+void	ft_link(char **str, t_s *swap);
+void	ft_table(t_s *swap, t_data *dt);
+void	ft_index_stack(t_s *swap, t_data *dt);
+void	ft_sort_table(t_data *dt);
 void	ft_check(char **str);
 void	ft_number(char **str);
 void	ft_duplicat(char **str);

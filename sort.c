@@ -6,11 +6,20 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:52:14 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/05 16:49:22 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/06 18:52:26 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_sort_two(t_s	*swap)
+{
+	t_node	*node;
+
+	node = swap->stack_a->next;
+	if (swap->stack_a->data > node->data)
+		ft_sa(swap);
+}
 
 void	ft_sra(t_s *swap)
 {
