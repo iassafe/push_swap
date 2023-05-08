@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:43:18 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/07 13:01:58 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/08 17:43:23 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ void	ft_table(t_s *swap, t_data *dt)
 	dt->tab = malloc((dt->count) * sizeof(int));
 	node = swap->stack_a;
 	i = 0;
+	dt->len_tab = 0;
 	while (node)
 	{
 		dt->tab[i++] = node->data;
+		dt->len_tab++;
 		node = node->next;
 	}
+	// printf("--%d\n", dt->len_tab);
 }
 
 void	ft_sort_table(t_data *dt)
@@ -77,11 +80,6 @@ void	ft_sort_table(t_data *dt)
 		}
 		i++;
 	}
-	// i = 0;
-	// while(i < dt->count)
-	// {
-	// 	printf("**%d ", dt->tab[i++]);
-	// }
 }
 
 void	ft_index_stack(t_s *swap, t_data *dt)

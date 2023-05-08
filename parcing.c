@@ -6,11 +6,18 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/06 14:13:49 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/07 15:01:43 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_parcing(t_s *swap)
+{
+	ft_check(swap->str);
+	ft_number(swap->str);
+	ft_duplicat(swap->str);
+}
 
 void	ft_check(char **str)
 {
@@ -25,8 +32,7 @@ void	ft_check(char **str)
 		{
 			if (str[i][j] == '+' || str[i][j] == '-')
 			{
-				if ((!(str[i][j + 1] >= '0' && str[i][j + 1] <= '9')) ||
-					(str[i][j - 1] != ' ' && str[i][j - 1] != '\0'))
+				if ((!(str[i][j + 1] >= '0' && str[i][j + 1] <= '9')))
 					ft_error("Error\n");
 			}
 			j++;
