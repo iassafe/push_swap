@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/08 17:43:37 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/10 17:07:38 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,15 @@ void	ft_sort(t_s *swap, t_data *dt)
 		ft_table(swap, dt);
 		ft_sort_table(dt);
 		ft_index_stack(swap, dt);
-		ft_push_stack_b(swap, dt);
-		ft_push_stack_a(swap, dt);
+		ft_init_data(dt, swap);
+		// ft_push_stack(swap, dt);
+		// ft_push_stack_a(swap, dt);
 		// printf("----\n");
-		// while (swap->stack_b)
-		// {
-		// 	printf("**%d\n", swap->stack_b->data);
-		// 	swap->stack_b = swap->stack_b->next;
-		// }
+		while (swap->stack_b)
+		{
+			printf("**%d\n", swap->stack_b->data);
+			swap->stack_b = swap->stack_b->next;
+		}
 		// while (swap->stack_a)
 		// {
 		// 	printf("%d\n", swap->stack_a->data);

@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/08 17:31:34 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/10 14:55:53 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ typedef struct s_data
 
 }			t_data;
 
+void	ft_init_data(t_data *dt, t_s *swap);
 void	ft_push_stack_a(t_s *swap, t_data *dt);
-void	ft_push_stack_b(t_s *swap, t_data *dt);
+void	ft_push_stack(t_s *swap, t_data *dt);
 void	ft_size(t_s *swap);
 void	ft_sort_five(t_s *swap);
 void	ft_sort_four(t_s *swap);
@@ -56,6 +57,7 @@ void	ft_sort_two(t_s	*swap);
 void	ft_push_a(t_s *swap);
 void	ft_push_b(t_s *swap);
 void	ft_rra(t_s *swap);
+void	ft_rr(t_s *swap);
 void	ft_ra(t_s *swap);
 void	ft_rb(t_s *swap);
 void	ft_sa(t_s *swap);
