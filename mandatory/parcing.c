@@ -1,0 +1,100 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parcing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
+/*   Updated: 2023/05/13 17:21:49 by iassafe          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	ft_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
+}
+
+void	ft_parcing(t_s *swap, t_data *dt)
+{
+	dt->count = 0;
+	while (swap->str[dt->count])
+		dt->count++;
+	ft_check(swap->str);
+	ft_number(swap->str);
+	ft_duplicat(swap->str);
+	ft_link(swap->str, swap);
+	if (ft_check_sort(swap) != 0)
+		ft_sort(swap, dt);
+}
+
+void	ft_check(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (str[i][j] == '+' || str[i][j] == '-')
+			{
+				if ((!(str[i][j + 1] >= '0' && str[i][j + 1] <= '9')))
+					ft_error("Error\n");
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_number(char **str)
+{
+	int	i;
+	int	j;
+	int	n;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			n = ft_atoi(&str[i][j]);
+			if (!(str[i][j] >= '0' && str[i][j] <= '9')
+			&& str[i][j] != '+' && str[i][j] != '-')
+				ft_error("Error\n");
+			j++;
+		}
+		i++;
+	}
+}
+
+void	ft_duplicat(char **str)
+{
+	int	i;
+	int	k;
+	int	k_nb;
+	int	i_nb;
+
+	i = 1;
+	k = 0;
+	while (str[k])
+	{
+		i = 1;
+		while (str[i])
+		{
+			k_nb = ft_atoi(str[k]);
+			i_nb = ft_atoi(str[i]);
+			if (k_nb == i_nb && i != k)
+				ft_error("Error\n");
+			i++;
+		}
+		k++;
+	}
+}

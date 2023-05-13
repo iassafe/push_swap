@@ -6,22 +6,21 @@
 #    By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 13:41:12 by iassafe           #+#    #+#              #
-#    Updated: 2023/05/09 17:12:50 by iassafe          ###   ########.fr        #
+#    Updated: 2023/05/13 16:38:07 by iassafe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-CFLAGS = -Wall -Wextra -Werror -g
-SRC = push_swap.c utils_push_swap.c libft.c parcing.c swap.c \
-rotate.c rev_rotate.c push.c sort.c table.c push_stack_b.c
-INCLUDE = push_swap.h
+NAME = checker
+CFLAGS = -Wall -Wextra -Werror
+SRC = push_swap.c utils.c libft.c parcing.c swap.c \
+rotate.c rev_rotate.c push.c table.c get_next_line.c other_utils.c
+INCLUDE = push_swap_bonus.h
 
 OBJ = $(SRC:.c=.o)
 
-
 all : $(NAME)
 
-push_swap : $(OBJ) $(INCLUDE)
+checker : $(OBJ) $(INCLUDE)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o : %.c $(INCLUDE)

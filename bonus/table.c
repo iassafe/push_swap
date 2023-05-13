@@ -6,11 +6,11 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:43:18 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/08 17:43:23 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/13 16:42:29 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"push_swap_bonus.h"
 
 void	ft_link(char **str, t_s *swap)
 {
@@ -47,14 +47,11 @@ void	ft_table(t_s *swap, t_data *dt)
 	dt->tab = malloc((dt->count) * sizeof(int));
 	node = swap->stack_a;
 	i = 0;
-	dt->len_tab = 0;
 	while (node)
 	{
 		dt->tab[i++] = node->data;
-		dt->len_tab++;
 		node = node->next;
 	}
-	// printf("--%d\n", dt->len_tab);
 }
 
 void	ft_sort_table(t_data *dt)

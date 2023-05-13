@@ -6,17 +6,24 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/07 15:01:43 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/13 14:17:40 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
+
+void	ft_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
+}
 
 void	ft_parcing(t_s *swap)
 {
 	ft_check(swap->str);
 	ft_number(swap->str);
 	ft_duplicat(swap->str);
+	ft_link(swap->str, swap);
 }
 
 void	ft_check(char **str)
@@ -56,7 +63,7 @@ void	ft_number(char **str)
 			n = ft_atoi(&str[i][j]);
 			if (!(str[i][j] >= '0' && str[i][j] <= '9')
 			&& str[i][j] != '+' && str[i][j] != '-')
-				ft_error("not number\n");
+				ft_error("Error\n");
 			j++;
 		}
 		i++;
