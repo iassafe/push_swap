@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 16:42:35 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 14:33:32 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ typedef struct s_node
 
 typedef struct s_swap
 {
-	char	**str;
+	char	**table;
+	char	*str;
+	char	*s;
 	t_node	*stack_a;
 	t_node	*stack_b;
 	int		size_stack_b;
@@ -58,7 +60,7 @@ void	ft_rb(t_s *swap);
 void	ft_sa(t_s *swap);
 void	ft_sb(t_s *swap);
 void	ft_ss(t_s *swap);
-void	ft_parcing(t_s *swap);
+void	ft_parsing(t_s *swap);
 void	ft_link(char **str, t_s *swap);
 void	ft_table(t_s *swap, t_data *dt);
 void	ft_index_stack(t_s *swap, t_data *dt);
@@ -78,4 +80,6 @@ int		ft_memcmp( const void *pointer1, const void *pointer2, size_t size);
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *str, char c);
 char	*ft_strjoin(char *left_str, char *buff);
+void	free_stack(t_node *stack);
+void	free_tab(char **tab);
 #endif

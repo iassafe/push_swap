@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 10:56:23 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 16:57:12 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ typedef struct s_node
 
 typedef struct s_swap
 {
-	char	**str;
+	char	**table;
+	char	*s;
+	char	*str;
 	t_node	*stack_a;
 	t_node	*stack_b;
 	int		size_stack_b;
@@ -65,7 +67,7 @@ void	ft_table(t_s *swap, t_data *dt);
 void	ft_index_stack(t_s *swap, t_data *dt);
 void	ft_sort_table(t_data *dt);
 void	ft_sort(t_s *swap, t_data *dt);
-void	ft_parcing(t_s *swap, t_data *dt);
+void	ft_parsing(t_s *swap, t_data *dt);
 void	ft_check(char **str);
 void	ft_number(char **str);
 void	ft_duplicat(char **str);
@@ -77,4 +79,7 @@ size_t	ft_strlen(const char *str);
 char	*ft_strjoin_space(char *left_str, char *buff, char s);
 char	*ft_strtrim(char const *s1, char const *set, t_data	*dt);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+void	free_tab(char **tab);
+void	free_stack(t_s *swap);
+
 #endif

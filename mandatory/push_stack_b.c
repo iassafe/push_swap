@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:16:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 10:46:07 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 15:38:30 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	ft_push_stack_b(t_s *swap, t_data *dt)
 
 	i = 0;
 	if (dt->count <= 100)
-		j = 12;
+		j = 15;
 	else
 		j = 30;
 	while (swap->stack_a)

@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:52:14 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 17:56:33 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 16:39:06 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,14 @@ void	ft_sort_five(t_s *swap)
 		node = node->next;
 	}
 	while (min->data != swap->stack_a->data)
-		ft_ra(swap);
+	{
+		if (min->next == NULL)
+		{
+			ft_rra(swap);
+		}
+		else
+			ft_ra(swap);
+	}
 	ft_push_b(swap);
 	ft_sort_four(swap);
 	ft_push_a(swap);

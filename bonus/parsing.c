@@ -6,11 +6,11 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 17:21:49 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 14:30:59 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	ft_error(char *str)
 {
@@ -18,17 +18,12 @@ void	ft_error(char *str)
 	exit(1);
 }
 
-void	ft_parcing(t_s *swap, t_data *dt)
+void	ft_parsing(t_s *swap)
 {
-	dt->count = 0;
-	while (swap->str[dt->count])
-		dt->count++;
-	ft_check(swap->str);
-	ft_number(swap->str);
-	ft_duplicat(swap->str);
-	ft_link(swap->str, swap);
-	if (ft_check_sort(swap) != 0)
-		ft_sort(swap, dt);
+	ft_check(swap->table);
+	ft_number(swap->table);
+	ft_duplicat(swap->table);
+	ft_link(swap->table, swap);
 }
 
 void	ft_check(char **str)

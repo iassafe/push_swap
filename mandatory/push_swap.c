@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 17:36:59 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 16:56:52 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,23 @@ void	ft_sort(t_s *swap, t_data *dt)
 		ft_push_stack_b(swap, dt);
 		ft_size(swap);
 		ft_push_stack_a(swap, dt);
+		free(dt->tab);
 	}
+}
+
+void	ft_parsing(t_s *swap, t_data *dt)
+{
+	dt->count = 0;
+	while (swap->table[dt->count])
+		dt->count++;
+	ft_check(swap->table);
+	ft_number(swap->table);
+	ft_duplicat(swap->table);
+	ft_link(swap->table, swap);
+	if (ft_check_sort(swap) != 0)
+		ft_sort(swap, dt);
+	free_tab(swap->table);
+	free_stack(swap);
 }
 
 int	main(int ac, char **av)
@@ -52,24 +68,24 @@ int	main(int ac, char **av)
 	t_s		swap;
 	t_data	dt;
 	int		i;
-	char	*s;
-	char	*str;
 
 	i = 1;
-	s = NULL;
-	str = NULL;
+	swap.s = NULL;
+	swap.str = NULL;
 	if (ac > 1)
 	{
 		while (av[i])
-		{	
-			str = ft_strtrim(av[i], " ", &dt);
-			if (str[0] == '\0')
+		{
+			swap.str = ft_strtrim(av[i], " ", &dt);
+			if (swap.str[0] == '\0')
 				ft_error("Error\n");
-			s = ft_strjoin_space(s, av[i], ' ');
+			free(swap.str);
+			swap.s = ft_strjoin_space(swap.s, av[i], ' ');
 			i++;
 		}
-		swap.str = ft_split(s, ' ');
-		ft_parcing(&swap, &dt);
+		swap.table = ft_split(swap.s, ' ');
+		free(swap.s);
+		ft_parsing(&swap, &dt);
 	}
 	else
 		exit(0);

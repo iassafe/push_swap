@@ -6,13 +6,13 @@
 #    By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 13:41:12 by iassafe           #+#    #+#              #
-#    Updated: 2023/05/13 11:05:48 by iassafe          ###   ########.fr        #
+#    Updated: 2023/05/15 16:57:20 by iassafe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SRC = push_swap.c utils.c libft.c parcing.c swap.c \
+SRC = push_swap.c utils.c libft.c parsing.c swap.c \
 rotate.c rev_rotate.c push.c sort.c table.c push_stack_b.c
 INCLUDE = push_swap.h
 

@@ -6,11 +6,19 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 17:14:20 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/15 14:36:28 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+void	ft_free(t_s *swap)
+{
+	free(swap->s);
+	free_tab(swap->table);
+	free_stack(swap->stack_a);
+	free_stack(swap->stack_b);
+}
 
 int	ft_check_sort(t_s *swap)
 {
@@ -62,8 +70,10 @@ void	ft_read_input(t_s *swap)
 	while (line)
 	{
 		ft_check_oper(line, swap);
+		free(line);
 		line = get_next_line(0);
 	}
+	free(line);
 	if (swap->stack_b == NULL && ft_check_sort(swap) == 0)
 		write(1, "OK\n", 3);
 	if (ft_check_sort(swap) != 0 || swap->stack_b != NULL)
@@ -75,25 +85,25 @@ int	main(int ac, char **av)
 	t_s		swap;
 	t_data	dt;
 	int		i;
-	char	*s;
-	char	*str;
 
 	i = 1;
-	s = NULL;
-	str = NULL;
+	swap.s = NULL;
+	swap.str = NULL;
 	if (ac > 1)
 	{
 		while (av[i])
 		{
-			str = ft_strtrim(av[i], " ", &dt);
-			if (str[0] == '\0')
+			swap.str = ft_strtrim(av[i], " ", &dt);
+			if (swap.str[0] == '\0')
 				ft_error("Error\n");
-			s = ft_strjoin_space(s, av[i], ' ');
+			free(swap.str);
+			swap.s = ft_strjoin_space(swap.s, av[i], ' ');
 			i++;
 		}
-		swap.str = ft_split(s, ' ');
-		ft_parcing(&swap);
+		swap.table = ft_split(swap.s, ' ');
+		ft_parsing(&swap);
 		ft_read_input(&swap);
+		ft_free(&swap);
 	}
 	else
 		exit(0);
