@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 13:56:17 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/16 15:48:43 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/17 14:43:07 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void	ft_sb(t_s *swap)
 
 void	ft_ss(t_s *swap)
 {
-	if (swap->stack_a)
-		ft_swap_a(swap);
-	if (swap->stack_b)
-		ft_swap_b(swap);
+	ft_swap_a(swap);
+	ft_swap_b(swap);
 }

@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:17:46 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 09:52:14 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/17 14:39:23 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_rotate_a(t_s *swap)
 {
 	t_node	*node;
 
-	if (swap->stack_a == NULL)
+	if (swap->stack_a == NULL || swap->stack_a->next == NULL)
 		return ;
 	node = swap->stack_a;
 	while (node->next)
@@ -35,7 +35,7 @@ void	ft_rotate_b(t_s *swap)
 {
 	t_node	*node;
 
-	if (swap->stack_b == NULL)
+	if (swap->stack_b == NULL || swap->stack_a->next == NULL)
 		return ;
 	node = swap->stack_b;
 	while (node->next)
