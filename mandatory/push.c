@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:27:24 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/15 16:55:35 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 12:08:40 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,10 @@ void	free_tab(char **tab)
 		i++;
 	}
 	free(tab);
+}
+
+void	ft_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
 }

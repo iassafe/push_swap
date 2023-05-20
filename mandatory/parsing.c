@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parcing.c                                          :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/15 16:55:58 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 12:22:08 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error(char *str)
+int	ft_isdigit(int c)
 {
-	ft_putstr(str);
-	exit(1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
 
 void	ft_check(char **str)
@@ -31,9 +33,13 @@ void	ft_check(char **str)
 		{
 			if (str[i][j] == '+' || str[i][j] == '-')
 			{
-				if ((!(str[i][j + 1] >= '0' && str[i][j + 1] <= '9')))
+				if (!ft_isdigit(str[i][j + 1]))
 					ft_error("Error\n");
 			}
+			else if (ft_isdigit(str[i][j])
+				&& str[i][j + 1] && str[i][j + 1] != ' '
+				&& !ft_isdigit(str[i][j + 1]))
+				ft_error("Error\n");
 			j++;
 		}
 		i++;
@@ -69,7 +75,6 @@ void	ft_duplicat(char **str)
 	int	k_nb;
 	int	i_nb;
 
-	i = 1;
 	k = 0;
 	while (str[k])
 	{

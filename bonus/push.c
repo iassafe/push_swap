@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:27:24 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 14:15:38 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 12:10:53 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void	ft_push_a(t_s *swap)
 	swap->stack_a = swap->stack_b;
 	swap->stack_b = swap->stack_b->next;
 	swap->stack_a->next = node;
+}
+
+void	ft_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
 }
