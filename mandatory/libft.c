@@ -6,33 +6,32 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:37:42 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/13 11:03:01 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 14:15:41 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int				i;
 	int				s;
-	long			n;
+	unsigned long	n;
 
 	n = 0;
 	s = 1;
 	i = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-	i++;
+		i++;
 	if (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
-			s = -s;
+	{
+		if (str[i] == '-')
+			s *= -1;
+		i++;
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n = n * 10 + str[i++] - 48;
-		if (n <= -2147483647 || n >= 2147483647)
-		{
-			ft_error("Error\n");
-		}
 	}
 	return (s * n);
 }

@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:22:30 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/16 17:03:44 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 14:21:24 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_parsing(t_s *swap, t_data *dt);
 void	ft_check(char **str);
 void	ft_number(char **str);
 void	ft_duplicat(char **str);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
 void	ft_error(char *str);
 void	ft_putstr(char *str);

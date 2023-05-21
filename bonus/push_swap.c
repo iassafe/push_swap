@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/15 14:36:28 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 20:39:12 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_check_oper(char *line, t_s *swap)
 	if (ft_memcmp(line, "sa\n", 4) == 0)
 		ft_sa(swap);
 	else if (ft_memcmp(line, "sb\n", 3) == 0)
-		ft_sa(swap);
+		ft_sb(swap);
 	else if (ft_memcmp(line, "ss\n", 3) == 0)
 		ft_ss(swap);
 	else if (ft_memcmp(line, "pa\n", 3) == 0)

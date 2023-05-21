@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:40:45 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/16 16:59:14 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/21 11:41:29 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_sort(t_s *swap, t_data *dt)
 		ft_sort_four(swap);
 	if (dt->count == 5)
 		ft_sort_five(swap);
-	if (dt->count > 5 && dt->count <= 500)
+	if (dt->count > 5)
 	{
 		ft_table(swap, dt);
 		ft_sort_table(dt);

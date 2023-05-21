@@ -6,7 +6,7 @@
 /*   By: iassafe <iassafe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 12:01:48 by iassafe           #+#    #+#             */
-/*   Updated: 2023/05/20 12:22:24 by iassafe          ###   ########.fr       */
+/*   Updated: 2023/05/20 14:16:19 by iassafe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ void	ft_check(char **str)
 
 void	ft_number(char **str)
 {
-	int	i;
-	int	j;
-	int	n;
+	int		i;
+	int		j;
+	long	n;
 
 	i = 0;
 	while (str[i])
@@ -66,7 +66,9 @@ void	ft_number(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			n = ft_atoi(&str[i][j]);
+			n = ft_atoi(str[i]);
+			if (n < -2147483648 || n > 2147483647)
+				ft_error("Error\n");
 			if (!(str[i][j] >= '0' && str[i][j] <= '9')
 			&& str[i][j] != '+' && str[i][j] != '-')
 				ft_error("Error\n");
